@@ -5,8 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import reactor.netty.http.server.HttpServerRequest;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 
@@ -26,10 +25,8 @@ public class HomeController {
         return "processForm";
     }
     @RequestMapping("/processFormVersionTwo")
-    public String processFormVersionTwo(HttpServletRequest request, Model model){
-        String studentName = request.getParameter("studentName");
+    public String processFormVersionTwo(@RequestParam("studentName") String studentName, Model model){
         studentName = studentName.toUpperCase();
-
 
         model.addAttribute("message", studentName);
         return "processFormVersionTwo";
