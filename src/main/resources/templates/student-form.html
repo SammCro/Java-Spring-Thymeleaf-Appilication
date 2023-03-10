@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Index</title>
+    <style>
+        .error{
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <h1>Student Form</h1>
@@ -12,10 +17,13 @@
         <br>
         <label for="lastName">Last Name:</label>
         <input type="text" name="lastName" id="lastName" th:field="*{lastName}">
+        <p th:if="${#fields.hasErrors('lastName')}" th:errorclass="error" th:errors="*{lastName}"></p>
         <br>
-        <select th:field="*{country}">
+        <label for="country">Country:</label>
+        <input type="text" name="country" id="country" th:field="*{country}" th:error>
+        <!-- <select th:field="*{country}">
             <option th:each="option : ${options}" th:value="${option.value}" th:text="${option.value}"></option>
-        </select>
+        </select> -->
         <input type="submit" value="Submit">
     </form>
 </body>
