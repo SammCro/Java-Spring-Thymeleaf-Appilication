@@ -21,6 +21,15 @@
         <br>
         <label for="country">Country:</label>
         <input type="text" name="country" id="country" th:field="*{country}" th:error>
+        <br>
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age" th:field="*{age}" th:error>
+        <p th:if="${#fields.hasErrors('age')}" th:errorclass="error" th:errors="*{age}"></p>
+        <br>
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email" th:field="*{email}" th:error>
+        <p th:if="${#fields.hasErrors('email')}" th:errorclass="error" th:errors="*{email}"></p>
+
         <!-- <select th:field="*{country}">
             <option th:each="option : ${options}" th:value="${option.value}" th:text="${option.value}"></option>
         </select> -->

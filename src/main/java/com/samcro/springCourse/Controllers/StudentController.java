@@ -47,7 +47,6 @@ public class StudentController {
         if(theBindingResult.hasErrors()){
             return "student-form";
         }
-
         return "student-confirmation";
     }
     
