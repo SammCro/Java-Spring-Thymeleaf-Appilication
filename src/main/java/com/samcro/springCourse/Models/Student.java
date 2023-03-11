@@ -26,7 +26,7 @@ public class Student {
     @Pattern(regexp = "^(.+)@(.+)$", message ="you have enter a valid email")
     private String email;
 
-    @CourseCode(value = "SAM", message = "must start with SAM")
+    @CourseCode(value = {"SAM","YAS"}, message = "must start with SAM")
     private String courseCode;
 
     // default constructor
