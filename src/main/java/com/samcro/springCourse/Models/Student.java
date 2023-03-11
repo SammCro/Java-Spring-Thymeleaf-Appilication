@@ -6,6 +6,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import com.samcro.springCourse.CustomValidators.CourseCode;
+
 public class Student {
     private String firstName;
     
@@ -24,8 +26,13 @@ public class Student {
     @Pattern(regexp = "^(.+)@(.+)$", message ="you have enter a valid email")
     private String email;
 
+    @CourseCode(value = "SAM", message = "must start with SAM")
+    private String courseCode;
+
+    // default constructor
     public Student(){};
 
+    // getters and setters
     public String getFirstName(){
         return this.firstName;
     }
@@ -41,7 +48,6 @@ public class Student {
     public void setLastName(String lastName){
         this.lastName = lastName;
     }
-    //TODO: remove the unnecessary getter and setter methods.
     public String getCountry(){
         return this.country;
     }
@@ -65,5 +71,12 @@ public class Student {
         this.email = email;
     }
 
+    public String getCourseCode(){
+        return this.courseCode;
+    }
+    
+    public void setCourseCode(String courseCode){
+        this.courseCode = courseCode;
+    }
 }
  

@@ -29,7 +29,10 @@
         <label for="email">Email:</label>
         <input type="text" name="email" id="email" th:field="*{email}" th:error>
         <p th:if="${#fields.hasErrors('email')}" th:errorclass="error" th:errors="*{email}"></p>
-
+        <br>
+        <label for="courseCode">Course:</label>
+        <input type="text" name="courseCode" id="courseCode" th:field="*{courseCode}" th:error>
+        <p th:if="${#fields.hasErrors('courseCode')}" th:errorclass="error" th:errors="*{courseCode}"></p>
         <!-- <select th:field="*{country}">
             <option th:each="option : ${options}" th:value="${option.value}" th:text="${option.value}"></option>
         </select> -->
